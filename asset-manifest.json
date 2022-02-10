@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/learning-languages-ts/static/css/main.480f85f6.css",
-    "main.js": "/learning-languages-ts/static/js/main.c1543354.js",
+    "main.js": "/learning-languages-ts/static/js/main.4298e2d4.js",
     "static/js/787.dee6572a.chunk.js": "/learning-languages-ts/static/js/787.dee6572a.chunk.js",
     "index.html": "/learning-languages-ts/index.html",
     "main.480f85f6.css.map": "/learning-languages-ts/static/css/main.480f85f6.css.map",
-    "main.c1543354.js.map": "/learning-languages-ts/static/js/main.c1543354.js.map",
+    "main.4298e2d4.js.map": "/learning-languages-ts/static/js/main.4298e2d4.js.map",
     "787.dee6572a.chunk.js.map": "/learning-languages-ts/static/js/787.dee6572a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.480f85f6.css",
-    "static/js/main.c1543354.js"
+    "static/js/main.4298e2d4.js"
   ]
 }
