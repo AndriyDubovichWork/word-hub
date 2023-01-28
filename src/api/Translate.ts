@@ -2,21 +2,20 @@ import axios from 'axios';
 
 const Translate = async (word: string, errorHandler: () => void) => {
 	const options = {
-		method: 'GET',
-		url: 'https://translated-mymemory---translation-memory.p.rapidapi.com/get',
-		params: { langpair: 'en|ukr', q: word, mt: '1', onlyprivate: '0', de: 'a@b.c' },
+		method: 'POST',
+		url: 'https://rapid-translate-multi-traduction.p.rapidapi.com/t',
 		headers: {
+			'content-type': 'application/json',
 			'X-RapidAPI-Key': '933c98fa7amshe2840a4a213dfadp15a53ajsn8629f35eaef5',
-			'X-RapidAPI-Host': 'translated-mymemory---translation-memory.p.rapidapi.com',
+			'X-RapidAPI-Host': 'rapid-translate-multi-traduction.p.rapidapi.com',
 		},
+		data: `{"from":"en","to":"uk","e":"","q":"${word}"}`,
 	};
 
 	return await axios
 		.request(options)
 		.then(function (response) {
-			console.log(response);
-
-			return response.data.responseData.translatedText;
+			return response.data[0];
 		})
 		.catch(function () {
 			errorHandler();

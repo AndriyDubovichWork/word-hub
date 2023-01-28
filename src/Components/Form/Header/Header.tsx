@@ -12,19 +12,6 @@ const logo = require('./assets/imgs/logo.jpg');
 const Header = () => {
 	const { isOpen, HandleOpen } = useHeaderData();
 
-	// useEffect(() => {
-	// 	Generateword('noun').then((word) => {
-	// 		console.log(word);
-
-	// 		Translate(word).then((data) => {
-	// 			console.log(data);
-	// 		});
-	// 	});
-	// 	getDefenition('hello').then((data) => {
-	// 		console.log(data);
-	// 	});
-	// }, []);
-
 	return (
 		// header
 		<AppBar sx={{ backgroundColor: '#1b1b1b' }} position='static'>
