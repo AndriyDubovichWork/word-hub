@@ -4,8 +4,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import './Header.scss';
 import { AppBar, Button, Toolbar } from '@mui/material';
 import useHeaderData from './hooks/useHeaderData';
-import Translate from '../../../api/Translate';
-import Generateword from '../../../api/WordGenerator';
+import Translate from '../../../api/getTranslate';
+import Generateword from '../../../api/getWordGenerator';
 import getDefinition from '../../../api/getDefinition';
 const logo = require('./assets/imgs/logo.jpg');
 

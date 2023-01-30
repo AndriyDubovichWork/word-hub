@@ -4,10 +4,15 @@ const useErrorHandling = () => {
 	const dispatch = useAppDispatch();
 
 	const DeffineErrorHandling = () => {
-		setMissingData({ ...MissingData, CouldNotDefine: true });
+		dispatch(setMissingData({ ...MissingData, CouldNotDefine: true }));
 	};
 	const TranslateErrorHandling = () => {
-		setMissingData({ ...MissingData, CouldNotTranslate: true });
+		dispatch(
+			setMissingData({
+				...MissingData,
+				CouldNotTranslate: true,
+			})
+		);
 	};
 	const MissingData = useAppSelector((state) => state.CurrentWordSlice.missingData);
 
