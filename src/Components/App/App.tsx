@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../Form/Header/Header';
-// import GenerateWords from '../../features/GenerateWords/GenerateWords';
+import GenerateWords from '../../features/GenerateWords/GenerateWords';
 import store from '../../Redux/store';
 import { Provider } from 'react-redux';
 import './App.scss';
