@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import Generateword from '../../../api/getWordGenerator';
 import CustomButton from '../../../Components/UI/CustomButton/CustomButton';
+import { setWord, setIsPending } from '../../../Redux/CurrentWordSlice';
 import { useAppDispatch, useAppSelector } from '../../../Redux/hooks';
-import { setIsPending, setWord } from '../../GenerateWords/Redux/CurrentWordSlice';
-
 const GenerateWord = () => {
 	const [isStarted, setIsStarted] = useState(false);
 
 	const dispatch = useAppDispatch();
 
 	const isPending = useAppSelector((state) => state.CurrentWordSlice.isPending);
-	const CurrentlySelected = useAppSelector((state) => state.GenerateWordSlice);
+
+	const CurrentlySelected = useAppSelector((state) => state.CurrentWordSlice.english);
 	return (
 		<>
 			<CustomButton
