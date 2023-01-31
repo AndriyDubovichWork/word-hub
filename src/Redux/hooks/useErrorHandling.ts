@@ -1,5 +1,5 @@
-import { setMissingData as setUnfoundData } from '../Redux/CurrentWordSlice';
-import { useAppDispatch, useAppSelector } from '../../../Redux/hooks';
+import { setMissingData as setUnfoundData } from '../CurrentWordSlice';
+import { useAppDispatch, useAppSelector } from '../hooks';
 const useErrorHandling = () => {
 	const dispatch = useAppDispatch();
 

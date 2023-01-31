@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+	isStarted: false,
 	isPending: false,
 	missingData: {
 		CouldNotDefine: false,
@@ -20,7 +21,6 @@ export const CurrentWordSlice = createSlice({
 	name: 'counter',
 	initialState,
 	reducers: {
-		// ? set wor and deffinition after getting information
 		setWord: (state, action) => {
 			state.english.word = action.payload;
 		},
@@ -39,11 +39,15 @@ export const CurrentWordSlice = createSlice({
 		setIsPending: (state, action) => {
 			state.isPending = action.payload;
 		},
+
+		setIsStarted: (state, action) => {
+			state.isStarted = action.payload;
+		},
 	},
 });
 
 // ? Action creators are generated for each case reducer function
-export const { setWord, setDefinition, setTranslated, setMissingData, setIsPending } =
+export const { setWord, setDefinition, setTranslated, setMissingData, setIsPending, setIsStarted } =
 	CurrentWordSlice.actions;
 
 export default CurrentWordSlice.reducer;

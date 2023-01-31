@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react';
-import SlideBar from '../SlideBar/SlideBar';
 import MenuIcon from '@mui/icons-material/Menu';
-import './Header.scss';
 import { AppBar, Button, Toolbar } from '@mui/material';
+import SlideBar from '../SlideBar/SlideBar';
+import './Header.scss';
 import useHeaderData from './hooks/useHeaderData';
-import Translate from '../../../api/getTranslate';
-import Generateword from '../../../api/getWordGenerator';
-import getDefinition from '../../../api/getDefinition';
+
 const logo = require('./assets/imgs/logo.jpg');
 
 const Header = () => {
@@ -21,8 +18,6 @@ const Header = () => {
 				<Button sx={{ color: '#fff' }} onClick={HandleOpen}>
 					<MenuIcon />
 				</Button>
-
-				{/* logo */}
 
 				<img src={logo} alt='log' />
 

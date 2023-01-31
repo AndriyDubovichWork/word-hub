@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const Generateword = async (type: string) => {
+const getWord = async (type: string) => {
 	const options = {
 		method: 'GET',
 		url: 'https://random-word-by-api-ninjas.p.rapidapi.com/v1/randomword',
@@ -20,4 +20,4 @@ const Generateword = async (type: string) => {
 		});
 };
 
-export default Generateword;
+export default getWord;

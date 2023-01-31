@@ -1,7 +1,7 @@
-import { setDefinition, setTranslated, setIsPending } from '../Redux/CurrentWordSlice';
-import Translate from '../../../api/getTranslate';
-import getDefinition from '../../../api/getDefinition';
-import { useAppDispatch, useAppSelector } from '../../../Redux/hooks';
+import getDefinition from '../../api/getDefinition';
+import Translate from '../../api/getTranslate';
+import { setDefinition, setIsPending, setTranslated } from '../CurrentWordSlice';
+import { useAppDispatch, useAppSelector } from '../hooks';
 
 const useAPIHandler = (DeffineErrorHandling: () => void, TranslateErrorHandling: () => void) => {
 	const dispatch = useAppDispatch();

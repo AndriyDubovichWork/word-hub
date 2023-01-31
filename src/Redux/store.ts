@@ -1,10 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import CurrentWordSlice from '../features/GenerateWords/Redux/CurrentWordSlice';
-import GenerateWordSlice from '../features/GenerateWord/Redux/generateWordSlice';
+import CurrentWordSlice from './CurrentWordSlice';
 const store = configureStore({
 	reducer: {
 		CurrentWordSlice,
-		GenerateWordSlice,
 	},
 });
 export default store;
