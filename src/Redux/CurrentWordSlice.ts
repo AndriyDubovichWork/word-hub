@@ -1,10 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import missingDataT from '../types/missingDataT';
 import wordT from '../types/wordT';
-import wordCategoriesT from './types/wordCategoriesT';
 const deepcopy = require('deepcopy');
 type initialStateT = {
-	wordCategories: wordCategoriesT;
 	isStarted: boolean;
 	isPending: boolean;
 	missingData: missingDataT;
@@ -15,10 +13,6 @@ type initialStateT = {
 const initialState: initialStateT = {
 	isStarted: false,
 	isPending: false,
-	wordCategories: {
-		Categories: ['noun'],
-		selected: 0,
-	},
 	missingData: {
 		CouldNotDefine: false,
 		CouldNotTranslate: false,
@@ -69,9 +63,6 @@ export const CurrentWordSlice = createSlice({
 		},
 		setDefinition: (state, action) => {
 			state.english.definitions = action.payload;
-		},
-		setSelectedWordCategory: (state, action) => {
-			state.wordCategories.selected = action.payload;
 		},
 		setMissingData: (state, action) => {
 			state.missingData = action.payload;
