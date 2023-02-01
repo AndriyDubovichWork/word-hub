@@ -12,7 +12,7 @@ const DefineWord = () => {
 				</Button>
 			)}
 			{definitions.map((element) => {
-				return <h1 key={element.defid}>{element.definition}</h1>;
+				return <h2>{element.definition}</h2>;
 			})}
 		</>
 	);

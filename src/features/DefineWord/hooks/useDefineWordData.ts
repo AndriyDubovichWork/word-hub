@@ -8,8 +8,7 @@ import getAllDefinitionsOfWord from '../api/getAllDefinitions';
 const useDefineWordData = () => {
 	// * selectors
 	const { definitions, word } = useAppSelector((state) => state.CurrentWordSlice.english);
-	const isPending = useAppSelector((state) => state.CurrentWordSlice.isPending);
-	const missingData = useAppSelector((state) => state.CurrentWordSlice.missingData);
+	const { isPending, missingData } = useAppSelector((state) => state.CurrentWordSlice);
 
 	const dispatch = useAppDispatch();
 
