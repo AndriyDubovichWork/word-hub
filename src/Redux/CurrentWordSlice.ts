@@ -1,6 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
+import missingDataT from '../types/missingDataT';
+import wordT from '../types/wordT';
+const deepcopy = require('deepcopy');
+type initialStateT = {
+	isStarted: boolean;
+	isPending: boolean;
+	missingData: missingDataT;
+	english: wordT;
+	Translated: wordT;
+};
 
-const initialState = {
+const initialState: initialStateT = {
 	isStarted: false,
 	isPending: false,
 	missingData: {
@@ -9,23 +19,50 @@ const initialState = {
 	},
 	english: {
 		word: '',
-		definition: '',
+		definitions: [
+			{
+				definition: '',
+				permalink: '',
+				thumbs_up: 0,
+				author: '',
+				word: '',
+				defid: 0,
+				current_vote: '',
+				written_on: '',
+				example: '',
+				thumbs_down: 0,
+			},
+		],
 	},
+
 	Translated: {
 		word: '',
-		definition: '',
+		definitions: [
+			{
+				definition: '',
+				permalink: '',
+				thumbs_up: 0,
+				author: '',
+				word: '',
+				defid: 0,
+				current_vote: '',
+				written_on: '',
+				example: '',
+				thumbs_down: 0,
+			},
+		],
 	},
 };
 
 export const CurrentWordSlice = createSlice({
-	name: 'counter',
+	name: 'CurrentWordSlice',
 	initialState,
 	reducers: {
 		setWord: (state, action) => {
 			state.english.word = action.payload;
 		},
 		setDefinition: (state, action) => {
-			state.english.definition = action.payload;
+			state.english.definitions = action.payload;
 		},
 
 		setMissingData: (state, action) => {
@@ -43,11 +80,23 @@ export const CurrentWordSlice = createSlice({
 		setIsStarted: (state, action) => {
 			state.isStarted = action.payload;
 		},
+		setDeffaultValues: () => {
+			const StateCopy = deepcopy(initialState);
+			StateCopy.isStarted = true;
+			return StateCopy;
+		},
 	},
 });
 
 // ? Action creators are generated for each case reducer function
-export const { setWord, setDefinition, setTranslated, setMissingData, setIsPending, setIsStarted } =
-	CurrentWordSlice.actions;
+export const {
+	setWord,
+	setDefinition,
+	setDeffaultValues,
+	setTranslated,
+	setMissingData,
+	setIsPending,
+	setIsStarted,
+} = CurrentWordSlice.actions;
 
 export default CurrentWordSlice.reducer;

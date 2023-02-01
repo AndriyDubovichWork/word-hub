@@ -1,17 +1,23 @@
-import { Provider } from 'react-redux';
-import DefineWord from '../../features/DefineWord/Components/DefineWord';
+import DefineWord from '../../features/DefineWord';
 import GenerateWord from '../../features/GenerateWord';
-import store from '../../Redux/store';
+import { useAppSelector } from '../../Redux/hooks';
 import Header from '../Form/Header/Header';
 import './App.scss';
 const App = () => {
+	const isStarted = useAppSelector((state) => state.CurrentWordSlice.isStarted);
+
 	return (
-		<Provider store={store}>
+		<>
 			<Header />
-			{/* <GenerateWords /> */}
 			<GenerateWord />
-			<DefineWord />
-		</Provider>
+			{isStarted ? (
+				<>
+					<DefineWord />
+				</>
+			) : (
+				<></>
+			)}
+		</>
 	);
 };
 

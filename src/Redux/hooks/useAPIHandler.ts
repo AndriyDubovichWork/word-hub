@@ -1,5 +1,5 @@
-import getDefinition from '../../api/getDefinition';
 import Translate from '../../api/getTranslate';
+import getDefinition from '../../features/DefineWord/api/getAllDefinitions';
 import { setDefinition, setIsPending, setTranslated } from '../CurrentWordSlice';
 import { useAppDispatch, useAppSelector } from '../hooks';
 
@@ -14,7 +14,7 @@ const useAPIHandler = (DeffineErrorHandling: () => void, TranslateErrorHandling:
 	// ? request data
 	const getWordDeffinition = () => {
 		ControlIsPending(true);
-		getDefinition(english.word, DeffineErrorHandling)
+		getDefinition(english.word)
 			.then((deffenition) => {
 				ControlIsPending(false);
 				if (!deffenition) {
@@ -33,9 +33,11 @@ const useAPIHandler = (DeffineErrorHandling: () => void, TranslateErrorHandling:
 		ControlIsPending(true);
 		const translationText = MissingData.CouldNotDefine
 			? english.word
-			: `${english.word}${randomDivider}${!MissingData.CouldNotDefine ? english.definition : ''}`;
+			: `${english.word}${randomDivider}${
+					!MissingData.CouldNotDefine ? english.definitions[0].definition : ''
+			  }`;
 
-		if (!english.definition && !MissingData.CouldNotDefine) {
+		if (!english.definitions[0].definition && !MissingData.CouldNotDefine) {
 			getWordDeffinition();
 
 			return;
