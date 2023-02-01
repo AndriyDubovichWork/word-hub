@@ -1,5 +1,9 @@
-import { setDefinition, setIsPending, setMissingData } from '../../../Redux/CurrentWordSlice';
 import { useAppDispatch, useAppSelector } from '../../../Redux/hooks';
+import {
+	setCouldNotDefine,
+	setDefinition,
+	setIsPending,
+} from '../../../Redux/Slices/CurrentWordSlice';
 import getAllDefinitionsOfWord from '../api/getAllDefinitions';
 const useDefineWordData = () => {
 	// * selectors
@@ -16,7 +20,7 @@ const useDefineWordData = () => {
 			dispatch(setIsPending(false));
 
 			if (definitions.length === 0) {
-				dispatch(setMissingData({ ...missingData, CouldNotDefine: true }));
+				dispatch(setCouldNotDefine(true));
 				return;
 			}
 			dispatch(setDefinition(definitions));

@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const getWord = async (type: string) => {
+const getWord = async (typeOfWord: string) => {
 	const options = {
 		method: 'GET',
 		url: 'https://random-word-by-api-ninjas.p.rapidapi.com/v1/randomword',
-		params: { type },
+		params: { typeOfWord },
 		headers: {
 			'X-RapidAPI-Key': '933c98fa7amshe2840a4a213dfadp15a53ajsn8629f35eaef5',
 			'X-RapidAPI-Host': 'random-word-by-api-ninjas.p.rapidapi.com',

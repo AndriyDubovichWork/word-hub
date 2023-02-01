@@ -1,5 +1,5 @@
-import { setDeffaultValues, setIsPending, setWord } from '../../../Redux/CurrentWordSlice';
 import { useAppDispatch, useAppSelector } from '../../../Redux/hooks';
+import { setDeffaultValues, setIsPending, setWord } from '../../../Redux/Slices/CurrentWordSlice';
 import Generateword from '../api/getWord';
 
 const useGetWordData = () => {

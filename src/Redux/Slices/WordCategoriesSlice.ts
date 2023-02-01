@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import wordCategoriesT from '../types/wordCategoriesT';
+import wordCategoriesT from '../../types/wordCategoriesT';
 
 const initialState: wordCategoriesT = {
 	Categories: ['noun'],
