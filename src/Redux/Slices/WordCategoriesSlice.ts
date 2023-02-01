@@ -16,5 +16,4 @@ const WordCategoriesSlice = createSlice({
 });
 
 export const { setSelectedWordCategory } = WordCategoriesSlice.actions;
-
 export default WordCategoriesSlice.reducer;
