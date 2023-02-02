@@ -21,38 +21,12 @@ const initialState: initialStateT = {
 	selectedDefinition: 0,
 	english: {
 		word: '',
-		definitions: [
-			{
-				definition: '',
-				permalink: '',
-				thumbs_up: 0,
-				author: '',
-				word: '',
-				defid: 0,
-				current_vote: '',
-				written_on: '',
-				example: '',
-				thumbs_down: 0,
-			},
-		],
+		definitions: [''],
 	},
 
 	Translated: {
 		word: '',
-		definitions: [
-			{
-				definition: '',
-				permalink: '',
-				thumbs_up: 0,
-				author: '',
-				word: '',
-				defid: 0,
-				current_vote: '',
-				written_on: '',
-				example: '',
-				thumbs_down: 0,
-			},
-		],
+		definitions: [''],
 	},
 };
 
@@ -63,7 +37,7 @@ export const CurrentWordSlice = createSlice({
 		setWord: (state, action) => {
 			state.english.word = action.payload;
 		},
-		setDefinition: (state, action) => {
+		setDefinitions: (state, action) => {
 			state.english.definitions = action.payload;
 		},
 		setSelectedDefinition: (state, action) => {
@@ -76,8 +50,11 @@ export const CurrentWordSlice = createSlice({
 		setCouldNotTranslate: (state, action) => {
 			state.missingData.CouldNotTranslate = action.payload;
 		},
-		setTranslated: (state, action) => {
-			state.Translated = action.payload;
+		setTranslatedWord: (state, action) => {
+			state.Translated.word = action.payload;
+		},
+		setTranslatedDefinitions: (state, action) => {
+			state.Translated.definitions = action.payload;
 		},
 
 		setIsPending: (state, action) => {
@@ -94,10 +71,11 @@ export const CurrentWordSlice = createSlice({
 
 export const {
 	setWord,
-	setDefinition,
+	setDefinitions,
 	setDeffaultValues,
 	setSelectedDefinition,
-	setTranslated,
+	setTranslatedWord,
+	setTranslatedDefinitions,
 	setCouldNotDefine,
 	setCouldNotTranslate,
 	setIsPending,

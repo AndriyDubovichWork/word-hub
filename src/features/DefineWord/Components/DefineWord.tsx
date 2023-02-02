@@ -6,13 +6,13 @@ const DefineWord = () => {
 
 	return (
 		<>
-			{!definitions[0].definition && !CouldNotDefine && (
+			{!definitions[0] && !CouldNotDefine && (
 				<Button disabled={isPending} onClick={() => getDefinition()}>
 					define
 				</Button>
 			)}
-			{definitions.map((element) => {
-				return <h2>{element.definition}</h2>;
+			{definitions.map((definition) => {
+				return <h2 key={definition}>{definition}</h2>;
 			})}
 		</>
 	);

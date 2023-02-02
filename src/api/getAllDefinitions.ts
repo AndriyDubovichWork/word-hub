@@ -1,5 +1,5 @@
 import axios from 'axios';
-import DefinitionT from '../types/DefinitionT';
+import DefinitionT from '../features/DefineWord/types/DefinitionT';
 
 type responseT = {
 	data: {
@@ -21,7 +21,9 @@ const getAllDefinitions = async (word: string) => {
 	const definition = await axios
 		.request(options)
 		.then((response: responseT) => {
-			return response.data.list;
+			return response.data.list.map((item) => {
+				return item.definition;
+			});
 		})
 		.catch((error) => {
 			throw new Error(error);

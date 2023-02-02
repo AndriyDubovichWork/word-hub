@@ -1,10 +1,10 @@
+import getAllDefinitionsOfWord from '../../../api/getAllDefinitions';
 import { useAppDispatch, useAppSelector } from '../../../Redux/hooks';
 import {
 	setCouldNotDefine,
-	setDefinition,
+	setDefinitions,
 	setIsPending,
 } from '../../../Redux/Slices/CurrentWordSlice';
-import getAllDefinitionsOfWord from '../api/getAllDefinitions';
 const useDefineWordData = () => {
 	// * selectors
 	const { definitions, word } = useAppSelector((state) => state.CurrentWordSlice.english);
@@ -22,7 +22,7 @@ const useDefineWordData = () => {
 				dispatch(setCouldNotDefine(true));
 				return;
 			}
-			dispatch(setDefinition(definitions));
+			dispatch(setDefinitions(definitions));
 		});
 	};
 
