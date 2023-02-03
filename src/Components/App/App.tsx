@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import DefineWord from '../../features/DefineWord';
 import GenerateWord from '../../features/GenerateWord';
 import TranslateWord from '../../features/TranslateWord';
@@ -10,15 +11,17 @@ const App = () => {
 	return (
 		<>
 			<Header />
-			<GenerateWord />
-			{isStarted ? (
-				<>
-					<DefineWord />
-					<TranslateWord />
-				</>
-			) : (
-				<></>
-			)}
+			<Box>
+				<GenerateWord />
+				{isStarted ? (
+					<>
+						<TranslateWord />
+						<DefineWord />
+					</>
+				) : (
+					<></>
+				)}
+			</Box>
 		</>
 	);
 };

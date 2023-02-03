@@ -7,10 +7,10 @@ const GenerateWord = () => {
 
 	return (
 		<>
+			{isStarted ? <h1>{word}</h1> : ''}
 			<Button onClick={generateWordHandling} disabled={isPending}>
 				{isStarted ? 'Next' : 'Start'}
 			</Button>
-			{isStarted ? <h1>{word}</h1> : ''}
 		</>
 	);
 };
