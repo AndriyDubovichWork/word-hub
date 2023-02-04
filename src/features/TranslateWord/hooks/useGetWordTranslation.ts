@@ -15,6 +15,7 @@ const useGetWordTranslation = () => {
 
 	const dispatch = useAppDispatch();
 	const TranslateWord = () => {
+		dispatch(setIsPending(true));
 		getTranslation(word).then((wordTranslation: string) => {
 			dispatch(setIsPending(false));
 

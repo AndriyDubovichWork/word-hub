@@ -7,7 +7,7 @@ import { useAppSelector } from '../../../Redux/hooks';
 const Main = () => {
 	const isStarted = useAppSelector((state) => state.CurrentWordSlice.isStarted);
 	return (
-		<Box width='90vw' margin='0 auto'>
+		<Box width='90vw' margin='0 auto' display='flex' flexDirection='column'>
 			<GenerateWord />
 			{isStarted && (
 				<>
