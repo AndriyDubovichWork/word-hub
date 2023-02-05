@@ -27,14 +27,16 @@ const DefineWord = () => {
 					return <WordDefinition showMore={showMore} definition={definition} id={id} />;
 				})
 			)}
-			<Button
-				onClick={() => {
-					setShowMore(!showMore);
-				}}
-				sx={{ display: 'flex', margin: '1vh auto', width: '10vw' }}
-			>
-				{showMore ? 'show less' : 'show more'}
-			</Button>
+			{definitions.length > 2 && (
+				<Button
+					onClick={() => {
+						setShowMore(!showMore);
+					}}
+					sx={{ display: 'flex', margin: '1vh auto', width: '10vw' }}
+				>
+					{showMore ? 'show less' : 'show more'}
+				</Button>
+			)}
 		</Box>
 	);
 };

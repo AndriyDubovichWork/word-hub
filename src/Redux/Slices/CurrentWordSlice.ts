@@ -5,6 +5,7 @@ const deepcopy = require('deepcopy');
 type initialStateT = {
 	isStarted: boolean;
 	isPending: boolean;
+	showMore: boolean;
 	selectedDefinition: number;
 	missingData: missingDataT;
 	english: wordT;
@@ -14,6 +15,7 @@ type initialStateT = {
 const initialState: initialStateT = {
 	isStarted: false,
 	isPending: false,
+	showMore: false,
 	missingData: {
 		CouldNotDefine: false,
 		CouldNotTranslate: false,
@@ -39,6 +41,9 @@ export const CurrentWordSlice = createSlice({
 		},
 		setDefinitions: (state, action) => {
 			state.english.definitions = action.payload;
+		},
+		setShowMore: (state, action) => {
+			state.showMore = action.payload;
 		},
 		setSelectedDefinition: (state, action) => {
 			state.selectedDefinition = action.payload;
@@ -79,6 +84,7 @@ export const {
 	setCouldNotDefine,
 	setCouldNotTranslate,
 	setIsPending,
+	setShowMore,
 } = CurrentWordSlice.actions;
 
 export default CurrentWordSlice.reducer;

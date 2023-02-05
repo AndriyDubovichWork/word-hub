@@ -1,15 +1,15 @@
-import { useState } from 'react';
 import getAllDefinitionsOfWord from '../../../api/getAllDefinitions';
 import { useAppDispatch, useAppSelector } from '../../../Redux/hooks';
 import {
 	setCouldNotDefine,
 	setDefinitions,
 	setIsPending,
+	setShowMore,
 } from '../../../Redux/Slices/CurrentWordSlice';
 const useDefineWordData = () => {
 	// * selectors
 	const { definitions, word } = useAppSelector((state) => state.CurrentWordSlice.english);
-	const { isPending, missingData } = useAppSelector((state) => state.CurrentWordSlice);
+	const { isPending, missingData, showMore } = useAppSelector((state) => state.CurrentWordSlice);
 
 	const dispatch = useAppDispatch();
 
@@ -26,15 +26,13 @@ const useDefineWordData = () => {
 			dispatch(setDefinitions(definitions));
 		});
 	};
-
-	const [showMore, setShowMore] = useState(false);
-
+	const showMoreFunction = (showMore: boolean) => dispatch(setShowMore(showMore));
 	return {
 		definitions,
 		getDefinition,
 		isPending,
 		showMore,
-		setShowMore,
+		setShowMore: showMoreFunction,
 		CouldNotDefine: missingData.CouldNotDefine,
 	};
 };
