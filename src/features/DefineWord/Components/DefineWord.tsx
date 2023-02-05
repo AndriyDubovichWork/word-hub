@@ -1,9 +1,11 @@
 import { Box, Typography } from '@mui/material';
 import Button from '../../../Components/UI/CustomButton/CustomButton';
 import useDefineWordData from '../hooks/useDefineWordData';
+import WordDefinition from './WordDefinition/WordDefinition';
 
 const DefineWord = () => {
-	const { definitions, getDefinition, isPending, CouldNotDefine } = useDefineWordData();
+	const { definitions, getDefinition, isPending, CouldNotDefine, showMore, setShowMore } =
+		useDefineWordData();
 
 	return (
 		<Box>
@@ -21,15 +23,18 @@ const DefineWord = () => {
 					Could Not Define
 				</Typography>
 			) : (
-				definitions.map((definition) => {
-					return (
-						<Box display='inline-flex' key={definition}>
-							<h2 style={{ color: 'red' }}>{definition ? '•' : ''}</h2>
-							<h2>{definition}</h2>
-						</Box>
-					);
+				definitions.map((definition, id) => {
+					return <WordDefinition showMore={showMore} definition={definition} id={id} />;
 				})
 			)}
+			<Button
+				onClick={() => {
+					setShowMore(!showMore);
+				}}
+				sx={{ display: 'flex', margin: '1vh auto', width: '10vw' }}
+			>
+				{showMore ? 'show less' : 'show more'}
+			</Button>
 		</Box>
 	);
 };

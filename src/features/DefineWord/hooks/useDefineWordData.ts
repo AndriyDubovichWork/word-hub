@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import getAllDefinitionsOfWord from '../../../api/getAllDefinitions';
 import { useAppDispatch, useAppSelector } from '../../../Redux/hooks';
 import {
@@ -26,10 +27,14 @@ const useDefineWordData = () => {
 		});
 	};
 
+	const [showMore, setShowMore] = useState(false);
+
 	return {
 		definitions,
 		getDefinition,
 		isPending,
+		showMore,
+		setShowMore,
 		CouldNotDefine: missingData.CouldNotDefine,
 	};
 };
