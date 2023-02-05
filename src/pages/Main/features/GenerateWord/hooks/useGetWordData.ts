@@ -1,5 +1,10 @@
-import { useAppDispatch, useAppSelector } from '../../../Redux/hooks';
-import { setDeffaultValues, setIsPending, setWord } from '../../../Redux/Slices/CurrentWordSlice';
+import { useAppDispatch, useAppSelector } from '../../../../../Redux/hooks';
+import {
+	setDeffaultValues,
+	setIsPending,
+	setWord,
+} from '../../../../../Redux/Slices/CurrentWordSlice';
+import { setIsWordSavedToDB } from '../../../../../Redux/Slices/SavedWordSlice';
 import Generateword from '../api/getWord';
 
 const useGetWordData = () => {
@@ -11,6 +16,7 @@ const useGetWordData = () => {
 	const dispatch = useAppDispatch();
 
 	const generateWordHandling = () => {
+		dispatch(setIsWordSavedToDB(false));
 		dispatch(setDeffaultValues());
 
 		dispatch(setIsPending(true));

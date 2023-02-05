@@ -1,5 +1,5 @@
 import axios from 'axios';
-import DefinitionT from '../features/DefineWord/types/DefinitionT';
+import DefinitionT from '../pages/Main/features/DefineWord/types/DefinitionT';
 
 type responseT = {
 	data: {

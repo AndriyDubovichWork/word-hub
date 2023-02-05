@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
-import Button from '../../../Components/UI/CustomButton/CustomButton';
-import useGetWordTranslation from './../hooks/useGetWordTranslation';
+import Button from '../../../../../Components/UI/CustomButton/CustomButton';
+import useGetWordTranslation from '../hooks/useGetWordTranslation';
 const TranslateWord = () => {
 	const { isPending, TranslateHandling, TranslatedWord, CouldNotTranslate } =
 		useGetWordTranslation();

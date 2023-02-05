@@ -1,8 +1,9 @@
 import { Box } from '@mui/material';
-import DefineWord from '../../../features/DefineWord';
-import GenerateWord from '../../../features/GenerateWord';
-import TranslateWords from '../../../features/TranslateWord';
-import { useAppSelector } from '../../../Redux/hooks';
+import { useAppSelector } from '../../Redux/hooks';
+import DefineWord from './features/DefineWord';
+import GenerateWord from './features/GenerateWord';
+import SaveWord from './features/SaveWord';
+import TranslateWords from './features/TranslateWord';
 
 const Main = () => {
 	const isStarted = useAppSelector((state) => state.CurrentWordSlice.isStarted);
@@ -11,6 +12,7 @@ const Main = () => {
 			<GenerateWord />
 			{isStarted && (
 				<>
+					<SaveWord />
 					<TranslateWords />
 					<DefineWord />
 				</>

@@ -1,9 +1,9 @@
-import { useAppDispatch, useAppSelector } from '../../../Redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../../../../Redux/hooks';
 import {
 	setCouldNotTranslate,
 	setIsPending,
 	setTranslatedWord,
-} from '../../../Redux/Slices/CurrentWordSlice';
+} from '../../../../../Redux/Slices/CurrentWordSlice';
 import getTranslation from '../api/getTranslation';
 
 const useGetWordTranslation = () => {

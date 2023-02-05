@@ -1,11 +1,11 @@
-import getAllDefinitionsOfWord from '../../../api/getAllDefinitions';
-import { useAppDispatch, useAppSelector } from '../../../Redux/hooks';
+import getAllDefinitionsOfWord from '../../../../../api/getAllDefinitions';
+import { useAppDispatch, useAppSelector } from '../../../../../Redux/hooks';
 import {
 	setCouldNotDefine,
 	setDefinitions,
 	setIsPending,
 	setShowMore,
-} from '../../../Redux/Slices/CurrentWordSlice';
+} from '../../../../../Redux/Slices/CurrentWordSlice';
 const useDefineWordData = () => {
 	// * selectors
 	const { definitions, word } = useAppSelector((state) => state.CurrentWordSlice.english);

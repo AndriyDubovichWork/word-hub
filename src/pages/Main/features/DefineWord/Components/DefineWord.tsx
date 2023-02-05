@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import Button from '../../../Components/UI/CustomButton/CustomButton';
+import Button from '../../../../../Components/UI/CustomButton/CustomButton';
 import useDefineWordData from '../hooks/useDefineWordData';
 import WordDefinition from './WordDefinition/WordDefinition';
 
@@ -24,7 +24,9 @@ const DefineWord = () => {
 				</Typography>
 			) : (
 				definitions.map((definition, id) => {
-					return <WordDefinition showMore={showMore} definition={definition} id={id} />;
+					return (
+						<WordDefinition key={definition} showMore={showMore} definition={definition} id={id} />
+					);
 				})
 			)}
 			{definitions.length > 2 && (
@@ -34,7 +36,7 @@ const DefineWord = () => {
 					}}
 					sx={{ display: 'flex', margin: '1vh auto', width: '10vw' }}
 				>
-					{showMore ? 'show less' : 'show more'}
+					{showMore ? 'less' : 'more'}
 				</Button>
 			)}
 		</Box>
