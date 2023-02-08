@@ -7,7 +7,7 @@ import './App.scss';
 const App = () => {
 	const router = createBrowserRouter([
 		{
-			path: '/',
+			path: 'https://andriydubovichwork.github.io/word-hub/',
 			element: (
 				<>
 					<Header />
@@ -16,7 +16,7 @@ const App = () => {
 			),
 		},
 		{
-			path: '/savedWords',
+			path: 'https://andriydubovichwork.github.io/word-hub/savedWords',
 			element: (
 				<>
 					<Header />
