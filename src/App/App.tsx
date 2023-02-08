@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import Header from '../Components/Form/Header/Header';
 import Main from '../pages/Main/Main';
 import SavedWords from '../pages/SavedWords/SavedWords';
@@ -7,7 +7,7 @@ import './App.scss';
 const App = () => {
 	const router = createBrowserRouter([
 		{
-			path: 'https://andriydubovichwork.github.io/word-hub/',
+			path: '/',
 			element: (
 				<>
 					<Header />
@@ -16,7 +16,7 @@ const App = () => {
 			),
 		},
 		{
-			path: 'https://andriydubovichwork.github.io/word-hub/savedWords',
+			path: '/savedWords',
 			element: (
 				<>
 					<Header />
@@ -28,7 +28,11 @@ const App = () => {
 
 	return (
 		<>
-			<RouterProvider router={router} />
+			{/* <RouterProvider router={router} /> */}
+			<>
+				<Header />
+				<Main />
+			</>
 		</>
 	);
 };
