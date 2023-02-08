@@ -34,7 +34,7 @@ const useDefineWordData = () => {
 		getAllDefinitionsOfWord(word).then((definitions) => {
 			dispatch(setIsPending(false));
 
-			if (definitions.length === 0) {
+			if (definitions?.length === 0) {
 				dispatch(setCouldNotDefine(true));
 				return;
 			}
