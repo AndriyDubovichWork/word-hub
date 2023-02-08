@@ -2,7 +2,7 @@ import setWordsToDB from './setWordsToDB';
 import { wordT } from './types';
 import wordsMock from './wordsMock.json';
 const getWordsFromDB = (): wordT[] => {
-	let words: wordT[] = JSON.parse(sessionStorageorage.getItem('words') || '').words;
+	let words: wordT[] = JSON.parse(sessionStorage.getItem('words') || '').words;
 	if (!words) {
 		setWordsToDB(wordsMock);
 		return wordsMock.words;
@@ -10,7 +10,7 @@ const getWordsFromDB = (): wordT[] => {
 	if (!words[0].english.word && words.length > 1) {
 		words.shift();
 		setWordsToDB({ words });
-		words = JSON.parse(sessionStorageorage.getItem('words') || '').words;
+		words = JSON.parse(sessionStorage.getItem('words') || '').words;
 	}
 
 	return words;
