@@ -10,10 +10,10 @@ const Header = () => {
 		// header
 		<AppBar sx={{ backgroundColor: '#1b1b1b' }} position='static'>
 			<Toolbar sx={{ justifyContent: 'space-between', position: 'relative' }}>
-				<Link to='/'>
+				<Link to='/word-hub/'>
 					<img src={logo} alt='logo' />
 				</Link>
-				<Link to='/savedWords'>
+				<Link to='/word-hub/savedWords'>
 					<ListAltIcon
 						sx={{
 							color: '#fff',

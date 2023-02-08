@@ -1,7 +1,7 @@
 import { wordsT } from './types';
 
 const setWordsToDB = (words: wordsT) => {
-	sessionStorage.setItem('words', JSON.stringify(words));
+	localStorage.setItem('words', JSON.stringify(words));
 	return words;
 };
 
