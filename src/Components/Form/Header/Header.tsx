@@ -2,6 +2,7 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 import { AppBar, Toolbar } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './Header.scss';
+import React from 'react';
 const logo = require('./assets/imgs/logo.jpg');
 
 const Header = () => {

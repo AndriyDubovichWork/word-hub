@@ -1,6 +1,6 @@
 import { TableCell, tableCellClasses } from '@mui/material';
 import { styled } from '@mui/material/styles';
-
+import React from 'react';
 const CustomTableCell = styled(TableCell)(() => ({
 	[`&.${tableCellClasses.head}`]: {
 		backgroundColor: '#000',

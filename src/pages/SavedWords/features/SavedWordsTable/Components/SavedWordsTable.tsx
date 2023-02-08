@@ -4,6 +4,7 @@ import getWordsFromDB from '../../../../../dataBase/getWordsFromDB';
 import useSavedWordsTableData from '../hooks/useSavedWordsTableData';
 import TableBody from './TableBody/TableBody';
 import TableHead from './TableHead/TableHead';
+import React from 'react';
 
 const SavedWordsTable = () => {
 	const { words, SaveWords } = useSavedWordsTableData();

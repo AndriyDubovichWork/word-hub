@@ -1,5 +1,5 @@
 import { Box } from '@mui/system';
-
+import React from 'react';
 type WordDefinitionProps = {
 	showMore: boolean;
 	id: number;

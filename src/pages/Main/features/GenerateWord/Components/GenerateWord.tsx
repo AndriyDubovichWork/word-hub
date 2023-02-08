@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import Button from '../../../../../Components/UI/CustomButton/CustomButton';
-
+import React from 'react';
 import useGetWordData from '../hooks/useGetWordData';
 const loadingImg = require('./../assets/loading.gif');
 const GenerateWord = () => {

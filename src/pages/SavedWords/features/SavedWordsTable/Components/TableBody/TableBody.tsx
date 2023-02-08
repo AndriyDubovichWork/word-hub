@@ -3,8 +3,8 @@ import { TableBody, TableRow } from '@mui/material';
 import React from 'react';
 import TableCell from '../../../../../../Components/UI/CustomTableCell/CustomTableCell';
 import RemoveWordFromDB from '../../../../../../dataBase/RemoveWordFromDB';
+import React from 'react';
 import useSavedWordsTableData from '../../hooks/useSavedWordsTableData';
-
 const TableBodyComponent = () => {
 	const { words, SaveWords } = useSavedWordsTableData();
 	return (

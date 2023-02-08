@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import Button from '../../../../../Components/UI/CustomButton/CustomButton';
 import useSaveWordData from '../hooks/useSaveWordData';
-
+import React from 'react';
 const SaveWord = () => {
 	const { isPending, AddWord, isSaved } = useSaveWordData();
 	return (
