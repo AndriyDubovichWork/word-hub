@@ -29,10 +29,6 @@ const App = () => {
 	return (
 		<>
 			<RouterProvider router={router} />
-			<>
-				<Header />
-				<Main />
-			</>
 		</>
 	);
 };
