@@ -25,8 +25,8 @@ const getAllDefinitions = async (word: string) => {
 				return item.definition;
 			});
 		})
-		.catch((error) => {
-			throw new Error(error);
+		.catch((e) => {
+			console.error(e);
 		});
 	return definition;
 };

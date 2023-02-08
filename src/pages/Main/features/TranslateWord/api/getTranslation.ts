@@ -23,8 +23,8 @@ const getTranslation = async (word: string) => {
 		.then((response) => {
 			return response.data.responseData.translatedText;
 		})
-		.catch((error) => {
-			throw new Error(error);
+		.catch((e) => {
+			console.error(e);
 		});
 };
 export default getTranslation;
