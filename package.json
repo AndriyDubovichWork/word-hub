@@ -8,6 +8,7 @@
 		"@mui/icons-material": "^5.11.0",
 		"@mui/lab": "^5.0.0-alpha.116",
 		"@mui/material": "^5.11.5",
+		"@mui/x-data-grid": "^5.17.22",
 		"@reduxjs/toolkit": "^1.9.1",
 		"@saipulanuar/google-translate-api": "^8.0.0",
 		"@testing-library/jest-dom": "^5.14.1",

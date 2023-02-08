@@ -4,8 +4,16 @@ import useDefineWordData from '../hooks/useDefineWordData';
 import WordDefinition from './WordDefinition/WordDefinition';
 
 const DefineWord = () => {
-	const { definitions, getDefinition, isPending, CouldNotDefine, showMore, setShowMore } =
-		useDefineWordData();
+	const {
+		definitions,
+		getDefinition,
+		isPending,
+		CouldNotDefine,
+		showMore,
+		setShowMore,
+		selectedDefinition,
+		setSelectedDefinition,
+	} = useDefineWordData();
 
 	return (
 		<Box>
@@ -25,7 +33,14 @@ const DefineWord = () => {
 			) : (
 				definitions.map((definition, id) => {
 					return (
-						<WordDefinition key={definition} showMore={showMore} definition={definition} id={id} />
+						<WordDefinition
+							selectedDefinition={selectedDefinition}
+							setSelectedDefinition={setSelectedDefinition}
+							key={definition}
+							showMore={showMore}
+							definition={definition}
+							id={id}
+						/>
 					);
 				})
 			)}

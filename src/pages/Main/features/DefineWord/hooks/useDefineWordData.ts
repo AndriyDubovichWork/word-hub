@@ -4,14 +4,29 @@ import {
 	setCouldNotDefine,
 	setDefinitions,
 	setIsPending,
+	setSelectedDefinition,
 	setShowMore,
 } from '../../../../../Redux/Slices/CurrentWordSlice';
+import missingDataT from '../../../../../types/missingDataT';
 const useDefineWordData = () => {
 	// * selectors
 	const { definitions, word } = useAppSelector((state) => state.CurrentWordSlice.english);
-	const { isPending, missingData, showMore } = useAppSelector((state) => state.CurrentWordSlice);
+	const {
+		isPending,
+		missingData,
+		showMore,
+		selectedDefinition,
+	}: {
+		isPending: boolean;
+		missingData: missingDataT;
+		showMore: boolean;
+		selectedDefinition: number;
+	} = useAppSelector((state) => state.CurrentWordSlice);
 
 	const dispatch = useAppDispatch();
+
+	const setSelectedDefinitionFunction = (definitionID: number) =>
+		dispatch(setSelectedDefinition(definitionID));
 
 	const getDefinition = () => {
 		dispatch(setIsPending(true));
@@ -33,7 +48,9 @@ const useDefineWordData = () => {
 		isPending,
 		showMore,
 		setShowMore: showMoreFunction,
+		setSelectedDefinition: setSelectedDefinitionFunction,
 		CouldNotDefine: missingData.CouldNotDefine,
+		selectedDefinition,
 	};
 };
 

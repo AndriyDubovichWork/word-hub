@@ -1,5 +1,11 @@
+import SavedWordsTable from './features/SavedWordsTable/Components/SavedWordsTable';
+
 const SavedWords = () => {
-	return <div>SavedWords</div>;
+	return (
+		<>
+			<SavedWordsTable />
+		</>
+	);
 };
 
 export default SavedWords;

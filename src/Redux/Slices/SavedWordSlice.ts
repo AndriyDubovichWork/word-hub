@@ -1,10 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import wordT from '../../types/wordT';
+import savedWordsT from '../../types/savedWordsT';
 type initialStateT = {
-	words: {
-		english: wordT;
-		Translated: wordT;
-	}[];
+	words: savedWordsT;
 
 	isSaved: boolean;
 };
@@ -21,6 +18,7 @@ const initialState: initialStateT = {
 				word: '',
 				definitions: [''],
 			},
+			selectedDefinition: 0,
 		},
 	],
 	isSaved: false,
