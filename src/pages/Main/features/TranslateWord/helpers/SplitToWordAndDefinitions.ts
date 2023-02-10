@@ -1,6 +1,4 @@
 const SplitToWordAndDefinitions = (createWordAndDefinition: string) => {
-	console.log(createWordAndDefinition);
-
 	const word = createWordAndDefinition.split('123456789')[0];
 	const definitions = createWordAndDefinition.split('123456789')[1].split('123456789');
 	return { word, definitions };

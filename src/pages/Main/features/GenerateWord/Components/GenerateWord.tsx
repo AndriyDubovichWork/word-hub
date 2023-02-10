@@ -2,19 +2,35 @@ import { Box } from '@mui/material';
 import Button from '../../../../../Components/UI/CustomButton/CustomButton';
 import React from 'react';
 import useGetWordData from '../hooks/useGetWordData';
+import CustomSelect from '../../../../../Components/UI/CustomSelect/CustomSelect';
 const loadingImg = require('./../assets/loading.gif');
 const GenerateWord = () => {
-	const { word, isPending, isStarted, generateWordHandling } = useGetWordData();
+	const { word, isPending, isStarted, generateWordHandling, HandleSelect, Categories, selected } =
+		useGetWordData();
 
 	return (
-		<Box margin='1vh auto' textAlign='center'>
+		<Box textAlign='center' margin='1vh auto'>
 			<h1>{word}</h1>
-			{isPending && <img src={loadingImg} alt='loading' style={{ display: 'flex' }} />}
+			{isPending && (
+				<img src={loadingImg} alt='loading' style={{ display: 'flex', margin: '0 auto' }} />
+			)}
 
 			{isStarted ? (
-				<Button onClick={generateWordHandling} disabled={isPending} sx={{ width: '10vw' }}>
-					Next
-				</Button>
+				<Box sx={{ display: 'flex', flexDirection: 'column' }}>
+					<Button
+						onClick={generateWordHandling}
+						disabled={isPending}
+						sx={{ width: '10vw', margin: '2vh auto' }}
+					>
+						Next
+					</Button>
+					<CustomSelect
+						isPending={isPending}
+						Elements={Categories}
+						selected={selected}
+						Handler={HandleSelect}
+					/>
+				</Box>
 			) : (
 				<Button
 					onClick={generateWordHandling}

@@ -1,5 +1,5 @@
 type wordCategoriesT = {
 	Categories: string[];
-	selected: number;
+	selected: string;
 };
 export default wordCategoriesT;

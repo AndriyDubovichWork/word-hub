@@ -4,7 +4,6 @@ import { wordT } from './types';
 
 const PushWordToDB = (word: wordT) => {
 	let words = getWordsFromDB();
-	console.log(word);
 
 	words.push(word);
 	setWordsToDB({ words });

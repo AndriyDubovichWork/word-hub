@@ -5,8 +5,7 @@ const CustomButton = styled(LoadingButton)(() => ({
 	color: '#fff',
 	backgroundColor: '#1B1B1B',
 	'&:hover': {
-		color: '#000',
-		backgroundColor: '#e8ca51',
+		backgroundColor: '#2B2B2B',
 	},
 	'&:active': {
 		color: '#000',

@@ -2,8 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import wordCategoriesT from '../../types/wordCategoriesT';
 
 const initialState: wordCategoriesT = {
-	Categories: ['noun'],
-	selected: 0,
+	Categories: ['noun', 'verb', 'adjective', 'adverb'],
+	selected: 'noun',
 };
 const WordCategoriesSlice = createSlice({
 	name: 'Word Categories Slice',

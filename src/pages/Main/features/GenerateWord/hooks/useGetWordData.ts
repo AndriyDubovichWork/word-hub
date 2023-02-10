@@ -5,6 +5,7 @@ import {
 	setWord,
 } from '../../../../../Redux/Slices/CurrentWordSlice';
 import { setIsWordSavedToDB } from '../../../../../Redux/Slices/SavedWordSlice';
+import { setSelectedWordCategory } from '../../../../../Redux/Slices/WordCategoriesSlice';
 import Generateword from '../api/getWord';
 
 const useGetWordData = () => {
@@ -12,6 +13,7 @@ const useGetWordData = () => {
 	const word = useAppSelector((state) => state.CurrentWordSlice.english.word);
 
 	const { isStarted, isPending } = useAppSelector((state) => state.CurrentWordSlice);
+	const { Categories, selected } = useAppSelector((state) => state.WordCategoriesSlice);
 
 	const dispatch = useAppDispatch();
 
@@ -20,17 +22,24 @@ const useGetWordData = () => {
 		dispatch(setDeffaultValues());
 
 		dispatch(setIsPending(true));
-		Generateword('noun').then((word: string) => {
+		Generateword(selected).then((word: string) => {
 			dispatch(setWord(word));
 			dispatch(setIsPending(false));
 		});
+	};
+
+	const HandleSelect = (selected: string) => {
+		dispatch(setSelectedWordCategory(selected));
 	};
 
 	return {
 		word,
 		isPending,
 		isStarted,
+		Categories,
+		selected,
 		generateWordHandling,
+		HandleSelect,
 	};
 };
 
