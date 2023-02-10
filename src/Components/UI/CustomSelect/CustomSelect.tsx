@@ -36,12 +36,13 @@ const CustomSelect = ({ Elements, Handler, isPending, selected }: CustomSelectPr
 						control={
 							<Radio
 								sx={{
-									color: '#fff',
+									color: isPending ? '#f3ca20' : '#fff',
 									'&.Mui-checked': {
 										color: '#f3ca20',
 									},
+
 									'&.Mui-disabled': {
-										color: '#f3ca20',
+										color: '#fff',
 									},
 								}}
 							/>
@@ -50,7 +51,7 @@ const CustomSelect = ({ Elements, Handler, isPending, selected }: CustomSelectPr
 						label={
 							<Typography
 								sx={{
-									color: '#fff',
+									color: isPending ? '#f3ca20' : '#fff',
 								}}
 							>
 								{element.toUpperCase()}
