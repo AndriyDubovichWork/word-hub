@@ -1,17 +1,4 @@
-import { styled } from '@mui/material/styles';
-import {
-	FormControlLabel,
-	InputBase,
-	NativeSelect,
-	Radio,
-	RadioGroup,
-	Select,
-	Typography,
-} from '@mui/material';
-import { Box } from '@mui/system';
-import React from 'react';
-import CustomInput from '../CustomInput/CustomInput';
-import CustomMenuItem from '../CustomMenuItem/CustomMenuItem';
+import { FormControlLabel, Radio, RadioGroup, Typography } from '@mui/material';
 type CustomSelectPropsT = {
 	isPending: boolean;
 	Elements: string[];

@@ -1,6 +1,5 @@
-import React from 'react';
 import { Divider, List, ListItem } from '@mui/material';
-import CustomButton from '../../UI/CustomButton/CustomButton';
+import CustomButton from '../../UI/Custom/CustomButton/CustomButton';
 const Drawer = () => {
 	const buttons = [
 		{

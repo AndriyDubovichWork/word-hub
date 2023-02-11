@@ -1,8 +1,7 @@
 import { Box } from '@mui/material';
-import Button from '../../../../../Components/UI/CustomButton/CustomButton';
-import React from 'react';
+import Button from '../../../../../Components/UI/Custom/CustomButton/CustomButton';
+import CustomSelect from '../../../../../Components/UI/Custom/CustomSelect/CustomSelect';
 import useGetWordData from '../hooks/useGetWordData';
-import CustomSelect from '../../../../../Components/UI/CustomSelect/CustomSelect';
 const loadingImg = require('./../assets/loading.gif');
 const GenerateWord = () => {
 	const { word, isPending, isStarted, generateWordHandling, HandleSelect, Categories, selected } =

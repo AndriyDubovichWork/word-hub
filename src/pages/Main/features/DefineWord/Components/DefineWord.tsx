@@ -1,8 +1,7 @@
 import { Box, Typography } from '@mui/material';
-import Button from '../../../../../Components/UI/CustomButton/CustomButton';
+import Button from '../../../../../Components/UI/Custom/CustomButton/CustomButton';
 import useDefineWordData from '../hooks/useDefineWordData';
 import WordDefinition from './WordDefinition/WordDefinition';
-import React from 'react';
 const DefineWord = () => {
 	const {
 		definitions,

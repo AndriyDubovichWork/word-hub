@@ -1,11 +1,12 @@
 import DeleteIcon from '@mui/icons-material/Delete';
 import { TableBody, TableRow } from '@mui/material';
 import React from 'react';
-import TableCell from '../../../../../../Components/UI/CustomTableCell/CustomTableCell';
-import RemoveWordFromDB from '../../../../../../dataBase/RemoveWordFromDB';
+import TableCell from '../../../../../../Components/UI/Custom/CustomTableCell/CustomTableCell';
+import useApproveDeleteData from '../../../ApproveDelete/hooks/useApproveDeleteData';
 import useSavedWordsTableData from '../../hooks/useSavedWordsTableData';
 const TableBodyComponent = () => {
-	const { words, SaveWords } = useSavedWordsTableData();
+	const { words, setShowApproval, setWordToDelete, dontAskAgain } = useSavedWordsTableData();
+	const { Approve } = useApproveDeleteData();
 	return (
 		<TableBody>
 			{words.map((word) => {
@@ -31,7 +32,12 @@ const TableBodyComponent = () => {
 							<DeleteIcon
 								sx={{ cursor: 'pointer' }}
 								onClick={() => {
-									SaveWords(RemoveWordFromDB(words, english.word));
+									setWordToDelete(english.word);
+									if (dontAskAgain) {
+										Approve(english.word);
+									} else {
+										setShowApproval(true);
+									}
 								}}
 							/>
 						</TableCell>

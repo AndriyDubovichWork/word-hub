@@ -1,6 +1,5 @@
 import { TableHead, TableRow } from '@mui/material';
-import TableCell from '../../../../../../Components/UI/CustomTableCell/CustomTableCell';
-import React from 'react';
+import TableCell from '../../../../../../Components/UI/Custom/CustomTableCell/CustomTableCell';
 const TableHeadComponent = () => {
 	return (
 		<TableHead>

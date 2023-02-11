@@ -1,8 +1,8 @@
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
 import ListAltIcon from '@mui/icons-material/ListAlt';
-import { AppBar, Toolbar } from '@mui/material';
+import { AppBar, Box, Toolbar } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './Header.scss';
-import React from 'react';
 const logo = require('./assets/imgs/logo.jpg');
 
 const Header = () => {
@@ -13,17 +13,24 @@ const Header = () => {
 				<Link to='/word-hub/'>
 					<img src={logo} alt='logo' />
 				</Link>
-				<Link to='/word-hub/savedWords'>
-					<ListAltIcon
-						sx={{
-							color: '#fff',
-							position: 'absolute',
-							top: '50%',
-							right: '2%',
-							transform: 'translateY(-50%)',
-						}}
-					/>
-				</Link>
+				<Box>
+					<Link to='/word-hub'>
+						<LibraryAddIcon
+							sx={{
+								margin: '0 1vw',
+								color: '#fff',
+							}}
+						/>
+					</Link>
+					<Link to='/word-hub/savedWords'>
+						<ListAltIcon
+							sx={{
+								margin: '0 1vw',
+								color: '#fff',
+							}}
+						/>
+					</Link>
+				</Box>
 			</Toolbar>
 		</AppBar>
 	);
