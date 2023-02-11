@@ -6,6 +6,7 @@ import {
 } from '../../../../../Redux/Slices/CurrentWordSlice';
 import { setIsWordSavedToDB } from '../../../../../Redux/Slices/SavedWordSlice';
 import { setSelectedWordCategory } from '../../../../../Redux/Slices/WordCategoriesSlice';
+import { AddWordToHistory } from '../../../../../Redux/Slices/WordsHistorySlice';
 import Generateword from '../api/getWord';
 
 const useGetWordData = () => {
@@ -24,6 +25,9 @@ const useGetWordData = () => {
 		dispatch(setIsPending(true));
 		Generateword(selected).then((word: string) => {
 			dispatch(setWord(word));
+
+			dispatch(AddWordToHistory(word));
+
 			dispatch(setIsPending(false));
 		});
 	};

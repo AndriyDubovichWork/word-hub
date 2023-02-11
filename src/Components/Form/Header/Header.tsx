@@ -1,3 +1,4 @@
+import HistoryIcon from '@mui/icons-material/History';
 import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import { AppBar, Box, Toolbar } from '@mui/material';
@@ -24,6 +25,14 @@ const Header = () => {
 					</Link>
 					<Link to='/word-hub/savedWords'>
 						<ListAltIcon
+							sx={{
+								margin: '0 1vw',
+								color: '#fff',
+							}}
+						/>
+					</Link>
+					<Link to='/word-hub/history'>
+						<HistoryIcon
 							sx={{
 								margin: '0 1vw',
 								color: '#fff',

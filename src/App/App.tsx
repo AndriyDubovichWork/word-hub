@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Header from '../Components/Form/Header/Header';
+import History from '../pages/History/History';
 import Main from '../pages/Main/Main';
 import SavedWords from '../pages/SavedWords/SavedWords';
 import './App.scss';
-import React from 'react';
 const App = () => {
 	const router = createBrowserRouter([
 		{
@@ -21,6 +21,15 @@ const App = () => {
 				<>
 					<Header />
 					<SavedWords />
+				</>
+			),
+		},
+		{
+			path: '/word-hub/history',
+			element: (
+				<>
+					<Header />
+					<History />
 				</>
 			),
 		},
