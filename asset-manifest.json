@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/word-hub/static/css/main.4268dd16.css",
-    "main.js": "/word-hub/static/js/main.d6ae8507.js",
+    "main.js": "/word-hub/static/js/main.cac0634b.js",
     "static/media/loading.gif": "/word-hub/static/media/loading.c3d350f729cd5d3a3444.gif",
     "static/media/logo.jpg": "/word-hub/static/media/logo.ce2a193a3346aad41c22.jpg",
     "index.html": "/word-hub/index.html",
     "main.4268dd16.css.map": "/word-hub/static/css/main.4268dd16.css.map",
-    "main.d6ae8507.js.map": "/word-hub/static/js/main.d6ae8507.js.map"
+    "main.cac0634b.js.map": "/word-hub/static/js/main.cac0634b.js.map"
   },
   "entrypoints": [
     "static/css/main.4268dd16.css",
-    "static/js/main.d6ae8507.js"
+    "static/js/main.cac0634b.js"
   ]
 }
