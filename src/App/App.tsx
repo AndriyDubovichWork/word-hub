@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Header from '../Components/Form/Header/Header';
+import Advert from '../Components/UI/Advert/Advert';
 import History from '../pages/History/History';
 import Main from '../pages/Main/Main';
 import SavedWords from '../pages/SavedWords/SavedWords';
@@ -38,6 +39,7 @@ const App = () => {
 	return (
 		<>
 			<RouterProvider router={router} />
+			<Advert />
 		</>
 	);
 };
