@@ -7,7 +7,6 @@ const TableHeadComponent = () => {
 				<TableCell align='left'>WORD</TableCell>
 				<TableCell align='center'>DEFINITION</TableCell>
 				<TableCell align='center'>TRANSLATED WORD</TableCell>
-				<TableCell align='center'>TRANSLATED DEFINITION</TableCell>
 				<TableCell align='center'>REMOVE</TableCell>
 			</TableRow>
 		</TableHead>

@@ -23,11 +23,7 @@ const TableBodyComponent = () => {
 								: '❌'}
 						</TableCell>
 						<TableCell align='center'>{Translated.word ? Translated.word : '❌'}</TableCell>
-						<TableCell align='center'>
-							{Translated.definitions[selectedDefinition]
-								? Translated.definitions[selectedDefinition]
-								: '❌'}
-						</TableCell>
+
 						<TableCell align='center'>
 							<DeleteIcon
 								sx={{ cursor: 'pointer' }}
